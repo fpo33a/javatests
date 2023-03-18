@@ -11,17 +11,28 @@ import java.lang.reflect.Method;
 public class AnotherMain {
 
     // will be instanciated by injection dependency using @AutoInject annotation
-    public SampleClass sampleClass;
+    private SampleClass sampleClass;
+
+    private int val;
+
+    public int getVal() {
+        return this.val;
+    }
+
+    public void setVal(int v) {
+        this.val = v;
+    }
+
 
     // this is a read method
     public SampleClass getSampleClass() {
-        return sampleClass;
+        return this. sampleClass;
     }
 
     // this is a write method
     @AutoInjectDependence
     public void setSampleClass(SampleClass ts) {
-        sampleClass = ts;
+        this.sampleClass = ts;
     }
 
 
