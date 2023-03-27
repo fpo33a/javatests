@@ -15,6 +15,12 @@
 
     <dependencies>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.avro/avro -->
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>1.11.1</version>
+        </dependency>
 
         <dependency>
             <groupId>com.h2database</groupId>
