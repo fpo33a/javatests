@@ -1,0 +1,13 @@
+{
+  "name": "Emma Watson",
+  "artist": "Paul Walker",
+  "description": null,
+  "tags": [
+    "oil",
+    "famous"
+  ],
+  "val": {
+    "CurrencyCode": "USDX",
+    "Amount": 100
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema#",
+  "$id+": "http://my-paintings-api.com/schemas/painting-schema.json",
+  "additionalProperties": false,
+  "type": "object",
+  "title": "Painting",
+  "description": "Painting information",
+  "required": [
+    "name",
+    "artist",
+    "description",
+    "tags"
+  ],
+  "definitions": {
+    "AmountType": {
+      "type": "object",
+      "description": "A data type for an amount of money.",
+      "properties": {
+        "Amount": {
+          "description": "An amount of money.",
+          "$ref": "#/definitions/AmountDef"
+        },
+        "CurrencyCode": {
+          "description": "A unit of money or exchange.",
+          "$ref": "#/definitions/CurrencyCodeDef"
+        }
+      },
+      "required": [
+        "Amount",
+        "CurrencyCode"
+      ]
+    },
+    "CurrencyCodeDef": {
+      "type": "string",
+      "enum": [ "USD", "EUR" ],
+      "description": "A unit of money or exchange."
+    },
+    "AmountDef": {
+      "type": "number",
+      "description": "the amount value."
+    }
+  },
+  "properties": {
+    "val": {
+      "$ref": "#/definitions/AmountType",
+      "description": "Amount value & currency."
+    },
+    "name": {
+      "type": "string",
+      "description": "Painting name"
+    },
+    "artist": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Name of the artist"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Painting description"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tag"
+      }
+    }
+  },
+  "$defs": {
+    "tag": {
+      "type": "string",
+      "enum": [
+        "oil",
+        "watercolor",
+        "digital",
+        "famous"
+      ]
+    }
+  }
+}
